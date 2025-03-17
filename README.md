@@ -1,6 +1,6 @@
 # Cat Guru
 
-This is a simple Flask web application that provides cat wisdom and allows users to change the avatar and background color.
+This is a simple Flask web application that provides cat wisdom and allows users to change the avatar and background color. Based on Cat Facts API: https://catfact.ninja/fact
 
 ## Features
 
