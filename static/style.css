@@ -4,68 +4,99 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: Roboto, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
 }
 
 .container {
     text-align: center;
     background-color: white;
-    padding: 30px;
+    padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 #avatar {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #avatar:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .wisdom-text {
-    font-size: 16px;
-    font-family: Roboto, sans-serif;
-    color: #333;
-    line-height: 1.6;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f8f8f8;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    width: 80%;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
+    color: #444;
+    line-height: 1.7;
+    padding: 25px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    width: 90%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .wisdom-text:hover {
     background-color: #f0f0f0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .options button {
-    background: linear-gradient(135deg, #3498db, #2980b9); /* Gradient pro tlačítka */
-    color: white; /* Světlý text */
-    padding: 10px 20px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    padding: 12px 25px;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
 .options button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .options button:active {
     transform: translateY(1px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    #avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .wisdom-text {
+        font-size: 16px;
+        padding: 20px;
+    }
 }
