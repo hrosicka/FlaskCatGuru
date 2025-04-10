@@ -44,7 +44,7 @@ def format_wisdom(wisdom_text):
 @app.route('/')
 def index():
     avatar_index = random.randint(0, len(AVATARS) - 1)
-    background_color_index = 0
+    background_color_index = random.randint(0, len(BACKGROUND_COLORS) - 1)
     return render_template('index.html',
                            avatar=AVATARS[avatar_index],
                            background_color=BACKGROUND_COLORS[background_color_index])
