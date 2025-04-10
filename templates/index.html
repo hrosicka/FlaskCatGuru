@@ -3,12 +3,16 @@
 <head>
     <title>Cat Guru</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body style="background-color: {{ background_color }};">
     <main class="main-container">
         <div class="container">
             <img id="avatar" src="{{ url_for('static', filename=avatar.split('static/')[1]) }}" alt="Cat Avatar">
-            <div id="wisdom" class="wisdom-text"></div>
+            <div id="wisdom-container">
+                <div id="wisdom" class="wisdom-text"></div>
+                <button id="copy-wisdom-btn"><i class="fa-regular fa-copy"></i></button>
+            </div>
             <div class="options">
                 <button id="wisdomButton">Ask the Cat Guru</button>
                 <button id="avatarButton">Change Avatar</button>
@@ -62,6 +66,14 @@
                     backgroundColor = data.new_color;
                 });
         });
+        document.getElementById('copy-wisdom-btn').addEventListener('click', function() {
+            const wisdomText = document.getElementById('wisdom').innerText;
+            navigator.clipboard.writeText(wisdomText).then(() => {
+                alert('Wisdom copied to clipboard!');
+            }).catch(err => {
+            console.error('Failed to copy text:', err);
+        });
+    });
     </script>
 </body>
 </html>

@@ -1,102 +1,171 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: background-color 0.3s ease;
+    display: flex; /* Enables flexbox for the body, allowing centering of content */
+    justify-content: center; /* Centers content horizontally in the body */
+    align-items: center; /* Centers content vertically in the body */
+    height: 100vh; /* Sets the height of the body to the full viewport height */
+    margin: 0; /* Removes default body margin */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sets the default font for the body */
+    transition: background-color 0.3s ease; /* Adds a smooth transition for background color changes */
 }
 
 .main-container {
-    width: 100%;
-    max-width: 800px;
-    padding: 20px;
+    width: 100%; /* Makes the main container take up the full width of its parent */
+    max-width: 800px; /* Sets a maximum width for the main container */
+    padding: 20px; /* Adds padding around the content of the main container */
 }
 
 .container {
-    text-align: center;
-    background-color: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center; /* Centers text content within the container */
+    background-color: white; /* Sets the background color of the container to white */
+    padding: 40px; /* Adds padding around the content of the container */
+    border-radius: 15px; /* Rounds the corners of the container */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Adds a subtle box shadow to the container */
 }
 
 #avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 150px; /* Sets the width of the avatar image */
+    height: 150px; /* Sets the height of the avatar image */
+    border-radius: 50%; /* Makes the avatar image circular */
+    margin-bottom: 30px; /* Adds margin below the avatar image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adds a subtle box shadow to the avatar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds smooth transitions for transform and box-shadow on hover */
 }
 
 #avatar:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1); /* Scales up the avatar image on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhances the box shadow on avatar hover */
+}
+
+#wisdom-container {
+    display: flex; /* Enables flexbox for this container */
+    align-items: center; /* Vertically aligns items to the center */
+    justify-content: space-between; /* Places text on the left and button on the right with space in between */
+    margin: 30px auto; /* Centers the container horizontally and adds vertical margin */
+    width: 90%; /* Sets the width of the wisdom container */
+    position: relative; /* Needed for positioning the tooltip */
 }
 
 .wisdom-text {
-    font-size: 18px;
-    color: #444;
-    line-height: 1.7;
-    padding: 25px;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    margin: 30px auto;
-    width: 90%;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 18px; /* Sets the font size of the wisdom text */
+    color: #444; /* Sets the color of the wisdom text */
+    line-height: 1.7; /* Sets the line height for better readability */
+    padding: 25px; /* Adds padding around the wisdom text */
+    border: 1px solid #eee; /* Adds a light gray border around the text */
+    border-radius: 12px; /* Rounds the corners of the text box */
+    background-color: #f9f9f9; /* Sets a light gray background color for the text box */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle box shadow to the text box */
+    flex-grow: 1; /* Allows the text to take up available space */
+    margin: 0; /* Removes default margin as it's handled by #wisdom-container */
+    margin-right: 10px; /* Adds a margin to the right of the text for spacing from the icon */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Adds smooth transitions for background color and box-shadow on hover */
 }
 
 .wisdom-text:hover {
-    background-color: #f0f0f0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: #f0f0f0; /* Lightens the background color on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhances the box shadow on text hover */
+}
+
+#copy-wisdom-btn {
+    background: none; /* Removes the default background of the button */
+    color: #555; /* Sets the color of the icon */
+    border: none; /* Removes the button border */
+    padding: 8px; /* Adds small padding around the icon */
+    font-size: 1.2em; /* Sets the size of the icon */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    outline: none; /* Removes the default focus outline */
+    transition: color 0.3s ease; /* Adds a smooth transition for color changes on hover */
+    position: relative; /* Needed for positioning the tooltip */
+}
+
+#copy-wisdom-btn:hover {
+    color: #3498db; /* Changes the color of the icon on hover */
+}
+
+#copy-wisdom-btn::before {
+    content: "Copy wisdom"; /* Text of the tooltip */
+    position: absolute;
+    bottom: calc(100% + 10px); /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1; /* Ensure it's above other elements */
+}
+
+#copy-wisdom-btn:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+#copy-wisdom-btn::after {
+    content: ""; /* Empty content for the arrow */
+    position: absolute;
+    bottom: calc(100% + 5px); /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1; /* Ensure it's above other elements */
+}
+
+#copy-wisdom-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
 
 .options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    display: flex; /* Enables flexbox for the options container */
+    flex-wrap: wrap; /* Allows buttons to wrap to the next line on smaller screens */
+    justify-content: center; /* Centers the buttons horizontally */
+    gap: 10px; /* Adds spacing between the buttons */
+    margin-top: 20px; /* Adds margin above the buttons */
 }
 
 .options button {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #3498db, #2980b9); /* Creates a gradient background for the buttons */
+    color: white; /* Sets the text color of the buttons to white */
+    padding: 12px 25px; /* Adds padding inside the buttons */
+    border: none; /* Removes the button border */
+    border-radius: 5px; /* Rounds the corners of the buttons */
+    font-size: 16px; /* Sets the font size of the button text */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds smooth transitions for transform and box-shadow on hover/active */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Adds a subtle box shadow to the buttons */
 }
 
 .options button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px); /* Moves the button slightly up on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhances the box shadow on button hover */
 }
 
 .options button:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px); /* Moves the button slightly down when active (clicked) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adjusts the box shadow when the button is active */
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 20px;
+        padding: 20px; /* Reduces padding for smaller screens */
     }
 
     #avatar {
-        width: 120px;
-        height: 120px;
+        width: 120px; /* Reduces avatar size for smaller screens */
+        height: 120px; /* Reduces avatar size for smaller screens */
     }
 
     .wisdom-text {
-        font-size: 16px;
-        padding: 20px;
+        font-size: 16px; /* Reduces font size for smaller screens */
+        padding: 20px; /* Reduces padding for smaller screens */
     }
 }
