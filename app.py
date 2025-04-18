@@ -29,17 +29,17 @@ def get_cat_fact():
             return cat_fact_data["fact"]
         else:
             logging.error("Cat fact API response missing 'fact' key.")
-            return "Mňau! Kočičí moudrost nedostupná."  # Fallback message in Czech
+            return "Meow! Cat wisdom unavailable."  # Fallback message in English
     except requests.exceptions.ConnectionError as e:
-        error_message = "Nepodařilo se připojit k serveru. Zkontrolujte připojení k internetu."  # Error message in Czech
+        error_message = "Failed to connect to the server. Please check your internet connection."  # Error message in English
         logging.error(error_message)
         return error_message
     except requests.exceptions.Timeout as e:
-        error_message = "Požadavek vypršel. Zkuste to prosím později."  # Error message in Czech
+        error_message = "Request timed out. Please try again later."  # Error message in English
         logging.error(error_message)
         return error_message
     except requests.exceptions.RequestException as e:
-        error_message = f"Nastala neočekávaná chyba při požadavku: {e}"  # Error message in Czech
+        error_message = f"An unexpected error occurred during the request: {e}"  # Error message in English
         logging.error(error_message)
         return error_message
 
