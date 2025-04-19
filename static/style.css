@@ -144,6 +144,30 @@ body {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Adds a subtle box shadow to the buttons */
 }
 
+.options button .tooltiptext {
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: normal; 
+  
+    /* Position the tooltip */
+    position: absolute;
+    bottom: calc(100% + 10px); /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1em;
+    white-space: nowrap;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 1;
+  }
+
+.options button:hover .tooltiptext{
+    visibility: visible;
+}
+
 .options button:hover {
     transform: translateY(-3px); /* Moves the button slightly up on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhances the box shadow on button hover */
