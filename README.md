@@ -1,5 +1,14 @@
 # Cat Guru
 
+![Python](https://img.shields.io/badge/Made%20with-Python-3776AB?logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Powered%20by-Flask-000000?logo=flask)
+![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
+![Cat Facts API](https://img.shields.io/badge/API-Cat%20Facts-ffb347?logo=cat)
+![Customize%20your%20Cat](https://img.shields.io/badge/Customize-your_Cat!-purple?logo=github)
+![Not%20for%20dogs](https://img.shields.io/badge/Not%20for%20dogs-%F0%9F%90%B1-red)
+![100% Catitude](https://img.shields.io/badge/100%25-Catitude-orange?logo=github)
+![Zero%20Boring%20Webpages](https://img.shields.io/badge/Zero-Boring%20Webpages-blue?logo=smashingmagazine)
+
 This is a simple Flask web application that provides cat wisdom and allows users to change the avatar and background color. Based on Cat Facts API: https://catfact.ninja/fact.
 
 ![](https://github.com/hrosicka/FlaskCatGuru/blob/master/doc/CatGuru1.png)
